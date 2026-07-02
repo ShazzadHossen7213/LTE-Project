@@ -1,0 +1,86 @@
+import { IoIosArrowDown } from "react-icons/io";
+import { IoCallOutline, IoLocationOutline } from "react-icons/io5";
+import TopSlider from "../ui/topslider";
+import data from "@/data/data.json";
+export default function TopBar() {
+  const { help, selectors } = data;
+
+  return (
+    <section className="w-full bg-tea-charcoal text-white font-medium px-2 sm:px-4 md:px-6 py-1 sm:py-2.5">
+      <div className="topheader-wrapper max-w-360 mx-auto">
+        <div className="flex items-center justify-between gap-2 md:gap-4">
+          {/* Left Section - Help & Phone */}
+          <div className="flex items-center gap-1 sm:gap-2">
+            <span className="text-white text-xs font-medium font-['Gotham'] leading-4 hidden sm:inline">
+              {help.text}
+            </span>
+            <span className="text-white text-xs font-medium font-['Gotham'] leading-4 hidden sm:inline">|</span>
+            <div className="flex items-center gap-1 sm:gap-1.5">
+              <IoCallOutline className="w-3.5 h-3.5 text-white" />
+              <span className="text-white text-xs font-medium font-['Gotham'] leading-4 sm:text-sm hidden md:inline">
+                {help.phone.label} {help.phone.full}
+              </span>
+              <span className="text-white text-xs font-medium font-['Gotham'] leading-4 sm:text-sm md:hidden">
+                {help.phone.short}
+              </span>
+            </div>
+          </div>
+
+          {/* Center Section - Promotional Text */}
+          <div className="hidden lg:block flex-1 max-w-xl mx-4">
+            <TopSlider />
+          </div>
+
+          {/* Right Section - Location, Language & Currency */}
+          <div className="flex items-center gap-2 sm:gap-4">
+            {/* Location Icon */}
+            <IoLocationOutline className="w-4 h-4 text-white hidden sm:inline" />
+            
+            {/* Language Selector */}
+            <div className="flex items-center gap-0.5 cursor-pointer">
+              <select
+                className="bg-transparent text-white text-xs font-medium font-['Gotham'] leading-4 border-none outline-none cursor-pointer sm:text-sm appearance-none pr-0.5"
+                defaultValue={selectors.language.default}
+              >
+                {selectors.language.options.map((option: { value: string; label: string }) => (
+                  <option
+                    key={option.value}
+                    value={option.value}
+                    className="text-black bg-white"
+                  >
+                    {option.label}
+                  </option>
+                ))}
+              </select>
+              <IoIosArrowDown className="w-2.5 h-2.5 text-white" />
+            </div>
+
+            {/* Currency Selector */}
+            <div className="flex items-center gap-0.5 cursor-pointer">
+              <select
+                className="bg-transparent text-white text-xs font-medium font-['Gotham'] leading-4 border-none outline-none cursor-pointer appearance-none pr-0.5"
+                defaultValue={selectors.currency.default}
+              >
+                {selectors.currency.options.map((option: { value: string; label: string }) => (
+                  <option
+                    key={option.value}
+                    value={option.value}
+                    className="text-black bg-white"
+                  >
+                    {option.label}
+                  </option>
+                ))}
+              </select>
+              <IoIosArrowDown className="w-2.5 h-2.5 text-white" />
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile Slider - Below main content */}
+        <div className="lg:hidden pb-1">
+          <TopSlider />
+        </div>
+      </div>
+    </section>
+  );
+}

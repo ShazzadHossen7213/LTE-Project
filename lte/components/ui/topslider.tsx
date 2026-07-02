@@ -1,0 +1,57 @@
+'use client';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Autoplay } from 'swiper/modules';
+import { IoChevronBack, IoChevronForward } from 'react-icons/io5';
+import data from "@/data/top-bar.json";
+import 'swiper/css';
+import 'swiper/css/navigation';
+
+export default function TopSlider() {
+  const { slider } = data;
+
+  return (
+    <div className="flex items-center gap-2 text-brand-primary w-full justify-center">
+      <button 
+        className="topslider-prev cursor-pointer hover:opacity-80 transition-opacity shrink-0 flex items-center justify-center text-brand-primary px-1"
+        aria-label="Previous slide"
+      >
+        <IoChevronBack className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+      </button>
+
+      <div className="grow overflow-hidden max-w-lg sm:max-w-xl px-1">
+        <Swiper
+          modules={[Navigation, Autoplay]}
+          navigation={{
+            prevEl: '.topslider-prev',
+            nextEl: '.topslider-next',
+          }}
+          autoplay={{
+            delay: slider.autoplayDelay,
+            disableOnInteraction: false,
+          }}
+          loop={true}
+          speed={slider.speed}
+          className="topslider-swiper"
+        >
+          {slider.slides.map((text: string, index: number) => (
+            <SwiperSlide key={index}>
+              <div className="text-center">
+                <span className="font-gotham text-brand-primary text-[10px] sm:text-xs md:text-sm font-normal tracking-wide underline cursor-pointer hover:opacity-95 transition-opacity whitespace-nowrap">
+                  {text}
+                </span>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+
+      <button 
+        className="topslider-next cursor-pointer hover:opacity-80 transition-opacity shrink-0 flex items-center justify-center text-brand-primary px-1"
+        aria-label="Next slide"
+      >
+        <IoChevronForward className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+      </button>
+    </div>
+  );
+}
