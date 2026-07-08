@@ -33,7 +33,7 @@ const slides = [
 
 export default function TeaHero() {
   return (
-    <section className="relative w-full h-[85vh] min-h-[550px] max-h-[900px] bg-tea-charcoal overflow-hidden">
+    <section className="relative w-full h-[85vh] min-h-137.5 max-h-225 bg-tea-charcoal overflow-hidden">
       <Swiper
         modules={[Autoplay, Pagination, EffectFade]}
         effect="fade"
@@ -45,7 +45,7 @@ export default function TeaHero() {
         {slides.map((slide, i) => (
           <SwiperSlide key={i}>
             <div className="relative w-full h-full flex items-center">
-              <div className="absolute inset-0 bg-gradient-to-r from-tea-charcoal/95 via-tea-charcoal/70 to-transparent z-10" />
+              <div className="absolute inset-0 bg-linear-to-r from-tea-charcoal/95 via-tea-charcoal/70 to-transparent z-10" />
               <div
                 className="absolute inset-0 bg-cover bg-center"
                 style={{ backgroundImage: `url(${slide.image})` }}

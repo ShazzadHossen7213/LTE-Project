@@ -12,14 +12,14 @@ export default function TeaGarden() {
             {/* Image */}
             <AnimateOnScroll variant="fade-left">
               <div className="relative">
-                <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
+                <div className="aspect-4/5 rounded-3xl overflow-hidden shadow-2xl">
                   <div
                     className="w-full h-full bg-cover bg-center"
                     style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1559526324-c1f275fbfa32?w=800&q=80)' }}
                   />
                 </div>
                 {/* Floating card */}
-                <div className="absolute -bottom-6 -right-4 sm:right-4 sm:-bottom-8 bg-white/90 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-xl max-w-[200px] sm:max-w-[240px]">
+                <div className="absolute -bottom-6 -right-4 sm:right-4 sm:-bottom-8 bg-white/90 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-xl max-w-50 sm:max-w-60">
                   <p className="font-heading text-2xl sm:text-3xl text-tea-crimson">85+</p>
                   <p className="font-body text-xs sm:text-sm text-tea-olive mt-1">Years of tea craftsmanship & heritage</p>
                 </div>

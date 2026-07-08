@@ -23,7 +23,7 @@ export default function TeaProducts() {
           {featured.map((product, i) => (
             <AnimateOnScroll key={product.id} variant="fade-up" delay={i * 80}>
               <a href="#" className="group block bg-white rounded-2xl overflow-hidden border border-tea-border/50 shadow-sm hover:shadow-lg transition-all duration-400">
-                <div className="relative aspect-[4/5] overflow-hidden bg-tea-light">
+                <div className="relative aspect-4/5 overflow-hidden bg-tea-light">
                   <div
                     className="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
                     style={{ backgroundImage: `url(${product.image})` }}

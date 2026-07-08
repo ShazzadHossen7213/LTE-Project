@@ -45,7 +45,7 @@ export default function TeaHeader() {
         className={`sticky top-0 z-50 transition-all duration-300 ${
           scrolled
             ? 'bg-white/95 backdrop-blur-md shadow-sm'
-            : 'bg-tea-charcoal'
+            : 'bg-white'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -53,7 +53,7 @@ export default function TeaHeader() {
             {/* Mobile menu toggle */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className={`lg:hidden p-2 -ml-2 ${scrolled ? 'text-tea-charcoal' : 'text-white'}`}
+              className={`lg:hidden p-2 -ml-2 ${scrolled ? 'text-stone-700' : 'text-stone-700'}`}
               aria-label="Toggle menu"
             >
               {mobileOpen ? <IoClose className="w-6 h-6" /> : <IoMenu className="w-6 h-6" />}
@@ -61,10 +61,10 @@ export default function TeaHeader() {
 
             {/* Logo */}
             <a href="#" className={`font-heading text-2xl lg:text-3xl tracking-wide shrink-0 ${
-              scrolled ? 'text-tea-charcoal' : 'text-white'
+              scrolled ? 'text-stone-700' : 'text-stone-700'
             }`}>
               <span className="text-tea-gold">London</span>{' '}
-              <span className={scrolled ? 'text-tea-charcoal' : 'text-white'}>Tea Exchange</span>
+              <span className={scrolled ? 'text-stone-700' : 'text-stone-700'}>Tea Exchange</span>
             </a>
 
             {/* Desktop nav */}
@@ -76,7 +76,7 @@ export default function TeaHeader() {
                   className={`font-body text-sm font-medium tracking-wide transition-colors duration-200 ${
                     scrolled
                       ? 'text-tea-olive hover:text-tea-crimson'
-                      : 'text-white/85 hover:text-white'
+                      : 'text-stone-700/85 hover:text-stone-700'
                   }`}
                 >
                   {item.label}
@@ -89,22 +89,21 @@ export default function TeaHeader() {
             <div className="flex items-center gap-3 lg:gap-5">
               <button
                 onClick={() => setSearchOpen(!searchOpen)}
-                className={`p-1.5 transition-colors ${scrolled ? 'text-tea-olive hover:text-tea-crimson' : 'text-white/85 hover:text-white'}`}
+                className={`p-1.5 transition-colors ${scrolled ? 'text-tea-olive hover:text-tea-crimson' : 'text-stone-700/85 hover:text-stone-700'}`}
                 aria-label="Search"
               >
                 <IoSearch className="w-5 h-5" />
               </button>
-              <a href="#" className={`p-1.5 hidden sm:block transition-colors ${scrolled ? 'text-tea-olive hover:text-tea-crimson' : 'text-white/85 hover:text-white'}`} aria-label="Account">
+              <a href="#" className={`p-1.5 hidden sm:block transition-colors ${scrolled ? 'text-tea-olive hover:text-tea-crimson' : 'text-stone-700/85 hover:text-stone-700'}`} aria-label="Account">
                 <IoPersonOutline className="w-5 h-5" />
               </a>
-              <a href="#" className={`p-1.5 relative transition-colors ${scrolled ? 'text-tea-olive hover:text-tea-crimson' : 'text-white/85 hover:text-white'}`} aria-label="Cart">
+              <a href="#" className={`p-1.5 relative transition-colors ${scrolled ? 'text-tea-olive hover:text-tea-crimson' : 'text-stone-700/85 hover:text-stone-700'}`} aria-label="Cart">
                 <IoBagOutline className="w-5 h-5" />
-                <span className="absolute -top-0.5 -right-0.5 w-4 h-4 bg-tea-crimson text-white text-[9px] font-body font-bold rounded-full flex items-center justify-center">0</span>
+                <span className="absolute -top-0.5 -right-0.5 w-4 h-4 bg-tea-crimson text-stone-700 text-[9px] font-body font-bold rounded-full flex items-center justify-center">0</span>
               </a>
             </div>
           </div>
         </div>
-
         {/* Search bar */}
         {searchOpen && (
           <div className="border-t border-tea-border bg-white">
